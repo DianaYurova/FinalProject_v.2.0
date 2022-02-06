@@ -15,8 +15,8 @@ public abstract class BaseTest {
     public static WebElement webElement;
 
 
-    @BeforeMethod(alwaysRun = true)
-    public static void asetup() {
+    @BeforeClass(alwaysRun = true)
+    public static void setup() {
 //        System.setProperty("webdriver.chrome.driver", ConfigProperties.getProperty("chromedriver"));
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\Downloads\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
@@ -26,7 +26,7 @@ public abstract class BaseTest {
 //        driver.findElement(By.name(".cookie-close abs cookiesBarClose")).click();
     }
     @AfterClass(alwaysRun = true)
-    public static void zafter() {
+    public static void after() {
         driver.close();
 
     }
