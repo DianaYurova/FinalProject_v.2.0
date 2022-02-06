@@ -12,9 +12,8 @@
 <!--                <include name="Negative tests" />-->
 <!--            </run>-->
 <!--        </groups>-->
-        <classes>
-            <class name="test.BaseTest" />
-            <class name="test.LoginTest" />
-        </classes>
+        <packages>
+            <package name = "test"/>
+        </packages>
     </test>
 </suite>
