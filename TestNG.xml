@@ -13,6 +13,7 @@
 <!--            </run>-->
 <!--        </groups>-->
         <classes>
+            <class name="test.BaseTest" />
             <class name="test.LoginTest" />
         </classes>
     </test>
