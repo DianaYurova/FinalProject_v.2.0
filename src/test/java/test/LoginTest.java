@@ -8,7 +8,7 @@ import static context.Context.profilePage;
 
 public class LoginTest extends BaseTest {
 
-    @Test(groups = {"Positives"})
+    @Test(groups = {"Positives"}, priority = 1)
     public void loginTest() {
         String email = "diankatestmail@gmail.com";
         String password = "Dianka123";
