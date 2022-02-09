@@ -14,8 +14,6 @@ public class Context {
 
     public static void login(String email, String password) {
 
-        mainPage.explicitCookiesBtn();
-        mainPage.closeCookiesWarning();
         mainPage.clickProfileBtn();
         loginPage.inputEmailValue(email);
         loginPage.inputPasswordValue(password);
@@ -28,6 +26,22 @@ public class Context {
         mainPage.openProfileMenu();
         mainPage.clickOnProfileMenu();
 //        mainPage.getUsername();
+    }
 
+    public static void getNameOfSelectedLang() {
+
+        if (!mainPage.isLangItemSelected()) {
+            mainPage.clickLangItem();
+        }
+        mainPage.getTextOfLangItem();
+    }
+
+    public static String nameOfMesageMenu(String value) {
+        if (mainPage.getTextOfLangItem().equals(value)) {
+            return mainPage.getNameOfMessageMenu();
+        } else {
+            System.out.println("error");
+        }
+        return null;
     }
 }

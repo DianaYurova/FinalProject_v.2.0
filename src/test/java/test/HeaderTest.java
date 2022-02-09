@@ -14,19 +14,15 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 import static context.Context.mainPage;
-import static context.Context.profilePage;
 
-public class LoginTest  extends  BaseTest{
+public class HeaderTest extends BaseTest {
 
-    public static WebDriver driver;
-    public static WebElement webElement;
-
-    @Test(groups = {"Positives"})
-    public void loginTest() {
-        String email = "diankatestmail@gmail.com";
-        String password = "Dianka123";
-        Context.login(email, password);
-        Assert.assertTrue(profilePage.isDisplayedBox());
+    @Test
+    public void languageChange() {
+        Context.getNameOfSelectedLang();
+        String language = "язык";
+        String messages = "Сообщения";
+        Context.nameOfMesageMenu(language);
+        Assert.assertEquals(Context.nameOfMesageMenu(language), messages);
     }
-
 }

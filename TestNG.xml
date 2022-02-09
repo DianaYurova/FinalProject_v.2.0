@@ -12,8 +12,12 @@
 <!--                <include name="Negative tests" />-->
 <!--            </run>-->
 <!--        </groups>-->
-        <packages>
+       <!-- <packages>
             <package name = "test"/>
-        </packages>
+        </packages>-->
+        <classes>
+            <class name="test.HeaderTest"></class>
+            <class name="test.LoginTest"></class>
+        </classes>
     </test>
 </suite>
