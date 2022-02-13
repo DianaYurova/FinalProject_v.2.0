@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static page.BasePage.explicitToBeClickable;
-
 public class LoginPage extends BasePage {
 
     public WebDriver driver;
@@ -27,6 +25,12 @@ public class LoginPage extends BasePage {
     @FindBy (id = "se_userLogin")
     private WebElement enterBtn;
 
+    @FindBy (xpath = "//label[@for='userEmail'][@class='error']")
+    private WebElement errorUserEmailField;
+
+    @FindBy (xpath = "//label[@for='userPass'][@class='error']")
+    private WebElement errorUserPassField;
+
     public void inputEmailValue(String value) {
         emailField.sendKeys(value);
     }
@@ -37,4 +41,6 @@ public class LoginPage extends BasePage {
     public void clickEnterBtn() {
         enterBtn.click();
     }
+    public String getEmailErrorText() { return errorUserEmailField.getText(); }
+    public String getPassErrorText() { return errorUserPassField.getText(); }
 }
