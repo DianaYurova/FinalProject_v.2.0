@@ -18,6 +18,7 @@ public abstract class BaseTest {
     public static void setup() {
 //        System.setProperty("webdriver.chrome.driver", ConfigProperties.getProperty("chromedriver"));
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\Downloads\\chromedriver_win32\\chromedriver.exe");
+//        System.setProperty("webdriver.edge.driver", "C:\\Users\\User\\Downloads\\edgedriver_win64\\msedgedriver.exe");
 //        ChromeOptions options = new ChromeOptions();
 //        options.addArguments("incognito");
 //        options.addArguments("--disable-dev-shm-usage");
@@ -33,8 +34,8 @@ public abstract class BaseTest {
         mainPage.closeCookiesWarning();
     }
     @AfterMethod(alwaysRun = true)
-    public static void tearDown() {
+    public void tearDown() {
         //driver.close();
-        driver.quit();
+          driver.quit();
     }
 }

@@ -19,7 +19,6 @@ public class ProfilePage extends BasePage{
     public WebElement userAccountInfo;
 
     public boolean isDisplayedBox() {
-        userAccountInfo.isDisplayed();
         return userAccountInfo.isDisplayed();
     }
 }

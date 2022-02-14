@@ -23,7 +23,7 @@ public abstract class BasePage {
                 .until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
-    public void explicitPageReload() {
+    public static void explicitPageReload() {
         dynamicElement2 = new WebDriverWait(driver, Duration.ofSeconds(100))
                 .until(ExpectedConditions.refreshed(
                         ExpectedConditions.presenceOfElementLocated(By.id("headerLogo"))
