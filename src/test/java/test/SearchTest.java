@@ -15,10 +15,10 @@ public class SearchTest extends BaseTest{
         Assert.assertTrue(searchPage.isDispayedFilters());
     }
 
-    @Test
-    public void allRegionsPresented() {
-
-    }
+//    @Test
+//    public void allRegionsPresented() {
+//
+//    }
 
     @Test
     public void selectCity() {

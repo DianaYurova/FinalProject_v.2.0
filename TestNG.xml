@@ -18,6 +18,7 @@
         <classes>
             <class name="test.HeaderTest"></class>
             <class name="test.LoginTest"></class>
+            <class name="test.SearchTest"></class>
         </classes>
     </test>
 </suite>

@@ -22,7 +22,9 @@ public abstract class BaseTest {
 //        ChromeOptions options = new ChromeOptions();
 //        options.addArguments("incognito");
 //        options.addArguments("--disable-dev-shm-usage");
-        driver = new ChromeDriver();
+        if( driver ==null) {
+            driver = new ChromeDriver();
+        }
 //        driver.manage().deleteAllCookies();
 //        driver.get("chrome://settings/clearBrowserData");
 //        driver.findElement(By.xpath("//settings-ui")).sendKeys(Keys.ENTER);
@@ -30,12 +32,14 @@ public abstract class BaseTest {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
         driver.get(ConfigProperties.getProperty("mainPage"));
-        mainPage.explicitCookiesBtn();
-        mainPage.closeCookiesWarning();
+        if(mainPage.cookiesAcceptBtn.isDisplayed()) {
+            mainPage.explicitCookiesBtn();
+            mainPage.closeCookiesWarning();
+        }
     }
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         //driver.close();
-          driver.quit();
+        //  driver.quit();
     }
 }

@@ -6,10 +6,10 @@ import org.testng.annotations.Test;
 
 import static context.ContextLogin.*;
 
-public class LoginTest  extends  BaseTest{
+public class LoginTest extends BaseTest{
 
     @Test
-    public void loginTest() {
+    public void loginZTest() {
         String email = "diankatestmail@gmail.com";
         String password = "Dianka123";
         ContextLogin.login(email, password);
@@ -18,7 +18,7 @@ public class LoginTest  extends  BaseTest{
     @Test
     public void loginWrongPass() {
         String email = "diankatestmail@gmail.com";
-        String password = "Dianka";
+        String password = "Dianka1234567";
         String errorMessage = "Неверный логин или пароль";
         ContextLogin.login(email, password);
         Assert.assertEquals (getPassErrorMsg(), errorMessage);
