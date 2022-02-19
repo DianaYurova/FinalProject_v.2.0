@@ -38,7 +38,5 @@ public class ContextLogin {
        return loginPage.getEmailErrorText();
     }
 
-    public static String getPassErrorMsg() {
-       return loginPage.getPassErrorText();
-    }
+    public static String getPassErrorMsg() { return loginPage.getPassErrorText(); }
 }

@@ -22,7 +22,7 @@ public class LoginPage extends BasePage {
     @FindBy (xpath = "//input[@id = 'userPass'][1]")
     private WebElement passwordField;
 
-    @FindBy (id = "se_userLogin")
+    @FindBy (xpath = "//section//button[@id= 'se_userLogin']")
     private WebElement enterBtn;
 
     @FindBy (xpath = "//label[@for='userEmail'][@class='error']")

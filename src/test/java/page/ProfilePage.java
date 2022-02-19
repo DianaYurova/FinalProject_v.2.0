@@ -16,9 +16,13 @@ public class ProfilePage extends BasePage{
     }
 
     @FindBy(className = "myaccount-pageinfo-container")
-    public WebElement userAccountInfo;
+    private WebElement userAccountInfo;
+
+    @FindBy(xpath = "//a[@class='olx-button olx-button--secondary paybalance-box__topup-button']")
+    private WebElement topUpBtn;
 
     public boolean isDisplayedBox() {
         return userAccountInfo.isDisplayed();
     }
+    public void clickTopUpBtn() { topUpBtn.click(); }
 }

@@ -9,7 +9,7 @@ import static context.ContextLogin.*;
 public class LoginTest extends BaseTest{
 
     @Test
-    public void loginZTest() {
+    public static void loginZTest() {
         String email = "diankatestmail@gmail.com";
         String password = "Dianka123";
         ContextLogin.login(email, password);
