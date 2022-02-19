@@ -16,11 +16,17 @@ public abstract class BasePage {
     public static WebElement webElement;
     public static WebElement dynamicElement1;
     public static WebElement dynamicElement2;
+    public static WebElement dynamicElement3;
     public static Actions action = new Actions(driver);
 
     public static void explicitToBeClickable(WebElement webElement) {
         dynamicElement1 = new WebDriverWait(driver, Duration.ofSeconds(100))
                 .until(ExpectedConditions.elementToBeClickable(webElement));
+    }
+
+    public static void explicitToBeVisible(WebElement webElement) {
+        dynamicElement3 = new WebDriverWait(driver, Duration.ofSeconds(100))
+                .until(ExpectedConditions.visibilityOf(webElement));
     }
 
     public static void explicitPageReload() {
