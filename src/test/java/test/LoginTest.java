@@ -9,14 +9,14 @@ import static context.ContextLogin.*;
 public class LoginTest extends BaseTest{
 
     @Test(priority = 12)
-    public static void loginZTest() {
+    public static void mloginZTest() {
         String email = "diankatestmail@gmail.com";
         String password = "Dianka123";
         ContextLogin.login(email, password);
         Assert.assertTrue(profilePage.isDisplayedBox());
     }
     @Test(priority = 11)
-    public void loginWrongPass() {
+    public void lloginWrongPass() {
         String email = "diankatestmail@gmail.com";
         String password = "Dianka1234567";
         String errorMessage = "Неверный логин или пароль";
@@ -25,7 +25,7 @@ public class LoginTest extends BaseTest{
     }
 
     @Test(priority = 9)
-    public void loginMissedEmail() {
+    public void jloginMissedEmail() {
 //        String email = "diankatestmail@gmail.com";
         String password = "Dianka";
         String errorMessage = "Поле обязательно для заполнения";
@@ -34,7 +34,7 @@ public class LoginTest extends BaseTest{
     }
 
     @Test(priority = 10)
-    public void loginMissedPass() {
+    public void kloginMissedPass() {
         String email = "diankatestmail@gmail.com";
 //        String password = "Dianka";
         String errorMessage = "Поле обязательно для заполнения";
@@ -43,7 +43,7 @@ public class LoginTest extends BaseTest{
     }
 
     @Test(priority = 8)
-    public void checkFbRedirect() {
+    public void icheckFbRedirect() {
         ContextLogin.clickFbBtn();
         Assert.assertTrue(loginPage.getCurrUrl().contains("facebook"));
     }

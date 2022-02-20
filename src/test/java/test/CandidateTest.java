@@ -9,7 +9,7 @@ import static context.ContextCandidate.getProfileNameAndLastName;
 public class CandidateTest extends BaseTest{
 
     @Test(priority = 14)
-    public void createCandidateProfile() throws InterruptedException {
+    public void ocreateCandidateProfile() throws InterruptedException {
 //        LoginTest.loginZTest();
         String firstName = "Diana";
         String lastName = "Test";
@@ -23,7 +23,7 @@ public class CandidateTest extends BaseTest{
     }
 
     @Test(priority = 15)
-    public void editCandidateProfile() throws InterruptedException {
+    public void peditCandidateProfile() throws InterruptedException {
 //        LoginTest.loginZTest();
         String firstName = "Diana";
         String lastName = "Test";

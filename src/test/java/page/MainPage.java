@@ -16,6 +16,9 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//li[@class = 'candidate-profile-link']/a")
     private WebElement candidateProfileLink;
 
+    @FindBy(xpath = "//a[@class = 'link fbold']")
+    private WebElement paymentLink;
+
     @FindBy(xpath = "//div[@class='css-1g5leiq']")
     private static WebElement usernameBox;
 
@@ -79,6 +82,7 @@ public class MainPage extends BasePage {
     }
     public void openProfileMenu() { action.moveToElement(myProfileBtn).build().perform();}
     public void clickCandidateLink() { candidateProfileLink.click(); }
+    public void clickPaymentLink() { paymentLink.click(); }
     public void clickOnProfileMenu() {action.moveToElement(userBox).click();}
     public void explicitMyProfileBtn() {explicitToBeClickable(myProfileBtn);}
     public boolean isLangItemSelected() { languageCheckBoxItem1.isSelected();

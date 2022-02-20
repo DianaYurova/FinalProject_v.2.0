@@ -12,21 +12,21 @@ import static org.testng.Assert.assertTrue;
 public class SearchTest extends BaseTest{
 
     @Test(priority = 4)
-    public void ensureFiltersPresented() {
+    public void eensureFiltersPresented() {
         driver.get(ConfigProperties.getProperty("mainPage"));
         ContextSearch.openSearchPage();
         assertTrue(searchPage.isDispayedFilters());
     }
 
     @Test(priority = 5)
-    public void selectCity() {
+    public void fselectCity() {
         driver.get(ConfigProperties.getProperty("mainPage"));
         ContextSearch.selectFromCities();
         assertTrue(searchPage.containsCityName().equals("Харьков"));
     }
 
     @Test(priority = 6)
-    public void search() throws InterruptedException {
+    public void gsearch() throws InterruptedException {
         driver.get(ConfigProperties.getProperty("mainPage"));
         String keyword = "мишень";
         ContextSearch.itemSearch(keyword);
@@ -37,14 +37,14 @@ public class SearchTest extends BaseTest{
     }
 
     @Test(priority = 7)
-    public void searchByCategory() throws InterruptedException {
+    public void hsearchByCategory() throws InterruptedException {
         driver.get(ConfigProperties.getProperty("mainPage"));
         ContextSearch.byCategory();
-        assertTrue(searchPage.headerContainsQuery().equals("Все для сада и огорода"));
+        assertTrue(searchPage.headerContainsQuery().contains("Все для сада и огорода"));
     }
 
     @Test(priority = 16)
-    public void favoriteAds() throws InterruptedException {
+    public void qfavoriteAds() throws InterruptedException {
 //        LoginTest.loginZTest();
         driver.get(ConfigProperties.getProperty("mainPage"));
         ContextSearch.byCategory();

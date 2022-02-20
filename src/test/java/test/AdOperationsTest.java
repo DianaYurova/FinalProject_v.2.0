@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class AdOperationsTest extends BaseTest {
 
     @Test(priority = 13)
-    public void sendMessage() throws InterruptedException {
+    public void nsendMessage() throws InterruptedException {
 //        LoginTest.loginZTest();
         driver.get("https://www.olx.ua/d/obyavlenie/prodam-svoyu-3k-s-kapitalnym-remontom-novye-doma-dvorets-sporta-IDM9AyO.html#173513b8eb");
         String text = "test 22";
@@ -23,7 +23,7 @@ public class AdOperationsTest extends BaseTest {
     }
 
     @Test(priority = 3)
-    public void sendMessageByUnauthorizedUser() throws InterruptedException {
+    public void dsendMessageByUnauthorizedUser() throws InterruptedException {
         driver.get(ConfigProperties.getProperty("mainPage"));
         ContextSearch.byCategory();
         ContextSearch.openRandomAd();

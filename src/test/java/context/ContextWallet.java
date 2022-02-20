@@ -17,12 +17,17 @@ public class ContextWallet {
     public static WalletPage walletPage = new WalletPage(driver);
 
     public static void checkPageAvailable() {
+        mainPage.openProfileMenu();
+        mainPage.clickPaymentLink();
         profilePage.clickTopUpBtn();
         walletPage.clickSubmitPaymentAmountBtn();
         walletPage.selectPayByCC();
+
     }
 
     public static void checkAnotherAmount() throws InterruptedException {
+        mainPage.openProfileMenu();
+        mainPage.clickPaymentLink();
         profilePage.clickTopUpBtn();
         Thread.sleep(3000);
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -38,6 +43,8 @@ public class ContextWallet {
     }
 
     public static void checkPrivatPayment() {
+        mainPage.openProfileMenu();
+        mainPage.clickPaymentLink();
         profilePage.clickTopUpBtn();
         walletPage.selectPrivat24Payment();
         walletPage.clickSubmitPaymentAmountBtn();

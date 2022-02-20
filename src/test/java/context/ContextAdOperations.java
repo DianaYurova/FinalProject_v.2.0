@@ -25,8 +25,10 @@ public class ContextAdOperations {
     }
 
     public static void tryToSendMsg(String text) throws InterruptedException {
-        adPage.sendMsg();
+//        adPage.sendMsg();
+        Thread.sleep(3000);
         adPage.inputTextMsg(text);
+//        adPage.submitSendMsg();
 //        Thread.sleep(1000);
 //        adPage.putCursorToInput();
     }
