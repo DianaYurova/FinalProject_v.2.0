@@ -24,12 +24,17 @@ public class WalletPage extends BasePage {
     @FindBy(xpath = "//p[@class='css-1d76riw-Text eu5v0x0']")
     private WebElement paymentInfoMsg;
 
-    @FindBy(xpath = "//input[@data-plutus = '59999']")
+    @FindBy(xpath = "//input[@data-plutus = '59999']/..")
     private WebElement biggestAmount;
+
+    @FindBy(xpath = "//a[@id = 'payment_chk_privat24']")
+    private WebElement privat24Btn;
 
     public void clickSubmitPaymentAmountBtn() { submitPaymentAmountBtn.click(); }
     public void selectPayByCC() { payByCreditCard.click(); }
     public boolean presenceOfPaymentInfoMsg() { return paymentInfoMsg.isDisplayed(); }
     public void selectBiggestPaymentAmount() { biggestAmount.click(); }
     public void explicitBiggestAmountToBeClickable() { explicitToBeClickable(biggestAmount); }
+    public void selectPrivat24Payment() { privat24Btn.click(); }
+    public String getCurrUrl() { return driver.getCurrentUrl();}
 }

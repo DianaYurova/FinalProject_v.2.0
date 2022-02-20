@@ -1,5 +1,6 @@
 package context;
 
+import org.openqa.selenium.JavascriptExecutor;
 import page.LoginPage;
 import page.MainPage;
 import page.ProfilePage;
@@ -26,6 +27,7 @@ public class ContextHeader {
     }
 
     public static void changeSelectedLang() throws InterruptedException {
+
         if(!mainPage.isLangItemSelected()) {
             mainPage.clickLangItem2();
         }
@@ -41,5 +43,18 @@ public class ContextHeader {
             System.out.println("error");
         }
         return null;
+    }
+
+    public static void checkIfMsgSent() throws InterruptedException {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0, 250);");
+//        mainPage.explicitMyMessagesBecomeClickable();
+//        Thread.sleep(1000);
+        mainPage.clickOnMessagesMenu();
+//        mainPage.openMyMessages();
+    }
+
+    public static void checkLink() {
+        mainPage.clickHelpLink();
     }
 }

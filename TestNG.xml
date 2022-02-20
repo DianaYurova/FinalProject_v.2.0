@@ -19,6 +19,9 @@
             <class name="test.HeaderTest"></class>
             <class name="test.LoginTest"></class>
             <class name="test.SearchTest"></class>
+            <class name="test.AdOperationsTest"></class>
+            <class name="test.CandidateTest"></class>
+            <class name="test.WalletTest"></class>
         </classes>
     </test>
 </suite>

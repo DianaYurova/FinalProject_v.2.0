@@ -1,15 +1,12 @@
 package page;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-
-import static test.BaseTest.driver;
 
 public class SearchPage extends BasePage{
 
@@ -22,31 +19,55 @@ public class SearchPage extends BasePage{
     }
 
     @FindBy (xpath = "//div[@class='fieldsets']")
-    public WebElement blockOfFilters;
+    private WebElement blockOfFilters;
 
     @FindBy (xpath = "//input [@id = 'search-text']")
-    public WebElement searchField;
+    private WebElement searchField;
 
     @FindBy (xpath = "//span[@class='button big4 fright br3']")
-    public WebElement searchBtn;
+    private WebElement searchBtn;
 
     @FindBy (xpath = "//input[@id = 'cityField']")
-    public WebElement cityField;
+    private WebElement cityField;
 
     @FindBy (xpath = "//a[@data-id = '8']")
-    public WebElement regionKh;
+    private WebElement regionKh;
 
     @FindBy (xpath = "//a[@data-name = '" + "Харьков" + "']")
-    public WebElement cityKh;
+    private WebElement cityKh;
 
     @FindBy (xpath = "//span[@class = 'fbold vishid']")
-    public WebElement filledCityField;
+    private WebElement filledCityField;
 
     @FindBy (xpath = "//h1[@class = 'small fnormal inline lheight18']")
-    public WebElement queryHeader;
+    private WebElement queryHeader;
 
     @FindBy (xpath = "//a[@class = 'clear-input-button']")
-    public WebElement clearBtn;
+    private WebElement clearBtn;
+
+    @FindBy(xpath = "//h3[@class= 'lheight22 margintop5']")
+    private WebElement searchResultAd;
+
+    @FindBy(xpath = "//span[@data-icon = 'star']")
+    private WebElement addToFavBtn;
+
+    @FindBy(xpath = "//a[@class = 'button button-from numeric gray block fnormal rel zi3 clr']")
+    private WebElement priceMin;
+
+    @FindBy(xpath = "//div[@class='filter-item filter-item-from rel numeric-item price']//a[@data-name = '1 000']")
+    private WebElement thousandMin;
+
+    @FindBy(xpath = "//a[@class = 'button button-to numeric gray block fnormal rel zi3 clr']")
+    private WebElement priceMax;
+
+    @FindBy(xpath = "//div[@class='filter-item filter-item-to rel numeric-item price']//a[@data-name = '1 000']")
+    private WebElement thousandMax;
+
+    @FindBy(xpath = "//div[@class='space inlblk rel']//p")
+    private WebElement adPrice;
+
+    @FindBy(xpath = "//a[@data-type = 'region']")
+    private WebElement selectRegion;
 
     public static WebElement dynamicElement3;
 
@@ -64,6 +85,9 @@ public class SearchPage extends BasePage{
     public void selectCityInList() { cityKh.click(); }
     public String containsCityName() { return filledCityField.getAttribute("innerHTML"); }
     public String headerContainsQuery() { return queryHeader.getAttribute("innerHTML"); }
+    public void selectAd() { searchResultAd.click(); }
+    public void addToFavorite() { addToFavBtn.click(); }
+
     public void explicitWaiter() {
         dynamicElement3 = new WebDriverWait(driver, Duration.ofSeconds(100))
                 .until(ExpectedConditions.elementToBeClickable
@@ -77,4 +101,16 @@ public class SearchPage extends BasePage{
 
     }
 
+    public void selectMinPrice() { priceMin.click();}
+    public void selectMaxPrice() { priceMax.click();}
+    public void setMin1000() { priceMin.sendKeys("1000");}
+    public void setMax1000() { priceMax.sendKeys("1000");}
+    public void selectThousandMin() { thousandMin.click(); }
+    public void selectThousandMax() { thousandMax.click(); }
+    public String getAdvtPrice() { return adPrice.getText(); }
+    public void selectRegion() { selectRegion.click(); }
+    public void clickMin1000() { action.doubleClick(priceMin); }
+    public void clickMax1000() { action.doubleClick(priceMax); }
+    public void moveToMin1000() { action.moveToElement(thousandMin).build().perform(); }
+    public void moveToMax1000() { action.moveToElement(thousandMax).click(); }
 }

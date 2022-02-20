@@ -1,14 +1,13 @@
 package context;
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 import page.*;
 
 import static test.BaseTest.driver;
 
 public class ContextWallet {
 
-    public static WebElement dynamicElement4;
+//    public static WebElement dynamicElement4;
 
     public static MainPage mainPage = new MainPage(driver);
     public static LoginPage loginPage = new LoginPage(driver);
@@ -18,14 +17,12 @@ public class ContextWallet {
     public static WalletPage walletPage = new WalletPage(driver);
 
     public static void checkPageAvailable() {
-        mainPage.openProfileMenu();
         profilePage.clickTopUpBtn();
         walletPage.clickSubmitPaymentAmountBtn();
         walletPage.selectPayByCC();
     }
 
     public static void checkAnotherAmount() throws InterruptedException {
-        mainPage.openProfileMenu();
         profilePage.clickTopUpBtn();
         Thread.sleep(3000);
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -38,5 +35,11 @@ public class ContextWallet {
         walletPage.selectBiggestPaymentAmount();
         walletPage.clickSubmitPaymentAmountBtn();
         walletPage.selectPayByCC();
+    }
+
+    public static void checkPrivatPayment() {
+        profilePage.clickTopUpBtn();
+        walletPage.selectPrivat24Payment();
+        walletPage.clickSubmitPaymentAmountBtn();
     }
 }

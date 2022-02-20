@@ -31,6 +31,12 @@ public class LoginPage extends BasePage {
     @FindBy (xpath = "//label[@for='userPass'][@class='error']")
     private WebElement errorUserPassField;
 
+    @FindBy(xpath = "//section//li[@data-content= 'login']")
+    private WebElement loginBox;
+
+    @FindBy(xpath = "//section[@class= 'login-page has-animation']//a[@id = 'fblogin']")
+    private WebElement fbBtn;
+
     public void inputEmailValue(String value) {
         emailField.sendKeys(value);
     }
@@ -43,4 +49,7 @@ public class LoginPage extends BasePage {
     }
     public String getEmailErrorText() { return errorUserEmailField.getText(); }
     public String getPassErrorText() { return errorUserPassField.getText(); }
+    public boolean loginBoxIsDisplayed() {  return loginBox.isDisplayed(); }
+    public void clickFBBtn() { fbBtn.click(); }
+    public String getCurrUrl() { return driver.getCurrentUrl();}
 }

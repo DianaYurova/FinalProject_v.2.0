@@ -8,9 +8,9 @@ import static context.ContextCandidate.getProfileNameAndLastName;
 
 public class CandidateTest extends BaseTest{
 
-    @Test
+    @Test(priority = 14)
     public void createCandidateProfile() throws InterruptedException {
-        LoginTest.loginZTest();
+//        LoginTest.loginZTest();
         String firstName = "Diana";
         String lastName = "Test";
         String phone = "0631233210";
@@ -22,9 +22,9 @@ public class CandidateTest extends BaseTest{
         ContextCandidate.deleteProfile();
     }
 
-    @Test
+    @Test(priority = 15)
     public void editCandidateProfile() throws InterruptedException {
-        LoginTest.loginZTest();
+//        LoginTest.loginZTest();
         String firstName = "Diana";
         String lastName = "Test";
         String phone = "0631233210";

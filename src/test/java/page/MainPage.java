@@ -40,6 +40,27 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//div[@class='wrapper clr rel']")
     private static WebElement headerBox;
 
+    @FindBy(xpath = "//a[@data-id = '899']/span[@style = 'background-color: rgb(200, 248, 246);']")
+    private WebElement domIsadIcon;
+
+    @FindBy(xpath = "//a[@data-id = '1433']")
+    private WebElement sadOgorod;
+
+    @FindBy(xpath = "//h3[@class= 'lheight22 margintop5']")
+    private WebElement advt;
+
+    @FindBy(xpath = "//a[@class = 'css-1q6sukh']/span")
+    private WebElement myMessages;
+
+    @FindBy(xpath = "//p[@class = 'css-kfe4ks-Text eu5v0x0'][1]")
+    private WebElement textOfLastMsg;
+
+    @FindBy(xpath = "//div//strong[@data-cy='common_text_header_observed_ads_counter']")
+    private WebElement favCounter;
+
+    @FindBy(xpath = "//a[@title='Помощь и Обратная связь']")
+    private WebElement helpLink;
+
     public WebDriver driver;
 
     public MainPage(WebDriver driver) {
@@ -68,4 +89,15 @@ public class MainPage extends BasePage {
     public String getNameOfMessageMenu() {
         return messagesMenu.getText();
     }
+    public void selectSearchCategory() { domIsadIcon.click(); }
+    public void selectSubCategory() { sadOgorod.click(); }
+    public void explicitMyMessagesBecomeClickable() { explicitToBeClickable(myMessages); }
+    public void clickOnMessagesMenu() {action.moveToElement(myMessages).click();}
+    public void openMyMessages() { myMessages.click(); }
+    public String getTextOfLastMsg() { return textOfLastMsg.getText(); }
+    public void explicitAdvt() { explicitToBeClickable(advt); }
+    public void openAd() { advt.click(); }
+    public String getFavCount() { return favCounter.getText(); }
+    public void clickHelpLink() { helpLink.click(); }
+    public String getCurrUrl() { return driver.getCurrentUrl();}
 }

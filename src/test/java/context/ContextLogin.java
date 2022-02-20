@@ -34,9 +34,11 @@ public class ContextLogin {
         loginPage.clickEnterBtn();
     }
 
-    public static String getEmailErrorMsg() {
-       return loginPage.getEmailErrorText();
-    }
-
+    public static String getEmailErrorMsg() { return loginPage.getEmailErrorText(); }
     public static String getPassErrorMsg() { return loginPage.getPassErrorText(); }
+    public static boolean isLoginBoxDisplayed() {return loginPage.loginBoxIsDisplayed(); }
+    public static void clickFbBtn() {
+        mainPage.clickProfileBtn();
+        loginPage.clickFBBtn();
+    }
 }

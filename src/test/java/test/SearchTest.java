@@ -1,38 +1,59 @@
 package test;
 
+import configuration.ConfigProperties;
+import context.ContextAdOperations;
 import context.ContextSearch;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import page.BasePage;
 
-import static context.ContextSearch.*;
+import static context.ContextSearch.searchPage;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class SearchTest extends BaseTest{
 
-    @Test
+    @Test(priority = 4)
     public void ensureFiltersPresented() {
+        driver.get(ConfigProperties.getProperty("mainPage"));
         ContextSearch.openSearchPage();
-        Assert.assertTrue(searchPage.isDispayedFilters());
+        assertTrue(searchPage.isDispayedFilters());
     }
 
-//    @Test
-//    public void allRegionsPresented() {
-//
-//    }
-
-    @Test
+    @Test(priority = 5)
     public void selectCity() {
+        driver.get(ConfigProperties.getProperty("mainPage"));
         ContextSearch.selectFromCities();
-        Assert.assertTrue(searchPage.containsCityName().equals("Харьков"));
+        assertTrue(searchPage.containsCityName().equals("Харьков"));
     }
 
-    @Test
+    @Test(priority = 6)
     public void search() throws InterruptedException {
+        driver.get(ConfigProperties.getProperty("mainPage"));
         String keyword = "мишень";
         ContextSearch.itemSearch(keyword);
         Thread.sleep(1000);
 //        searchPage.explicitWaiter();
         System.out.println(searchPage.headerContainsQuery());
-        Assert.assertTrue(searchPage.headerContainsQuery().contains(keyword));
+        assertTrue(searchPage.headerContainsQuery().contains(keyword));
     }
+
+    @Test(priority = 7)
+    public void searchByCategory() throws InterruptedException {
+        driver.get(ConfigProperties.getProperty("mainPage"));
+        ContextSearch.byCategory();
+        assertTrue(searchPage.headerContainsQuery().equals("Все для сада и огорода"));
+    }
+
+    @Test(priority = 16)
+    public void favoriteAds() throws InterruptedException {
+//        LoginTest.loginZTest();
+        driver.get(ConfigProperties.getProperty("mainPage"));
+        ContextSearch.byCategory();
+        String countBefore = ContextAdOperations.getFavoriteCountBefore();
+        ContextSearch.addToFavorites();
+        String countAfter = ContextAdOperations.getFavoriteCountAfter();
+        assertEquals(countAfter, ContextSearch.expectedCount());
+    }
+
+
+
 }
