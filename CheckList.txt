@@ -1,0 +1,26 @@
+Login tests:
+1 - Check that user is able to login with valid credentials
+2 - Check that appropriate error message appears if password field is blank upon login
+3 - Check that appropriate error message appears if email field is blank upon login
+4 - Check that appropriate error message appears if password is wrong upon login
+5 - Check that click on "Login with Facebook" button redirects user to Facebook login page
+Candidate tests:
+6 - Check that user is able to setup work profile
+7 - Check that user is able to edit work profile
+Header tests:
+8 - Check that page elements are rendered with appropriate to selected language names
+9 - Check that user is able to change the language
+10 - Check that clicking the Help link in footer redirects user to appropriate page
+Search tests:
+11 - Check that search filters are presented on the Search page
+12 - Check that search results correspond to the selected city in appropriate filter field
+13 - Check that search results correspond to the search query
+14 - Check that user is able to search using categories and subcategories of products
+15 - Check that user is able to add item from search results to the list of favorite ads
+AdOperations(operations with advertisements)tests:
+16 - Check that unauthorized user is not able to send message to the seller
+17 - Check that message could be successfully sent to the seller from authorized user
+Wallet tests:
+18 - Check that usr is able to top up his wallet with credit card
+19 - Check that user is able to choose the amount to top up his wallet
+20 - Check that user is able to top up his wallet using privat24 service
